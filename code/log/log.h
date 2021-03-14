@@ -57,8 +57,8 @@ private:
     bool isOpen_;
 
     Buffer buffer_;
-    int level_;
-    bool isAsync_;
+    int level_;                             // log type
+    bool isAsync_;                          // false for Sync true for Async
 
     FILE* fp_;
     std::unique_ptr<BlockQueue<std::string> > deque_;
