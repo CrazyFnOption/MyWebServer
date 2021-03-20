@@ -24,18 +24,18 @@ class HttpConn {
     HttpConn();
     ~HttpConn();
 
-    void init(int sockFd, const sockaddr_in& addr);
+    void Init(int sockFd, const sockaddr_in& addr);
     void Close();
 
-    ssize_t read(int* saveErrno);
-    ssize_t write(int* saveErrno);
+    ssize_t Read(int* saveErrno);
+    ssize_t Write(int* saveErrno);
 
     int GetFd() const;
     int GetPort() const;
     const char* GetIP() const;
     sockaddr_in GetAddr() const;
 
-    bool process();
+    bool Process();
 
     int ToWriteBytes() {
         return iov_[0].iov_len + iov_[1].iov_len;
