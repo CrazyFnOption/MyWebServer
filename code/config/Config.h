@@ -6,6 +6,8 @@
 #define CONFIG_H
 
 #include <unistd.h>
+#include "../server/webserver.h"
+
 
 class Config {
 public:

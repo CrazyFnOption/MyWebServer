@@ -10,8 +10,8 @@ Config::Config() {
     LOGWrite = 0;                                       // 0 for Sync , 1 for ASync
     TRIGMode = 0;                                       // default for LT + LT
     OPT_LINGER = 0;                                     // default for not use classic close
-    ConnPoolNum = 8;                                    // default sql connection for 8
-    threadNum = 8;                                      // the num of thread pool is 8;
+    ConnPoolNum = 12;                                    // default sql connection for 8
+    threadNum = 6;                                      // the num of thread pool is 8;
     OPENLOG = 1;                                        // 1 for open , 0 for close.
     ActorModel = 0;                                     // 0 for proactor , 1 for reactor
 }
