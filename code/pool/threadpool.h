@@ -20,6 +20,7 @@ public:
     explicit ThreadPool(size_t threadCount = 8):pool_(std::make_shared<Pool>()) {
         assert(threadCount > 0);
         for (size_t i = 0; i < threadCount; i++) {
+            // lambda expression
             std::thread([pool = pool_] {
                 std::unique_lock<std::mutex> locker (pool->mtx);
                 while(true) {
@@ -31,7 +32,7 @@ public:
                         locker.lock();
                     }
                     else if (pool->isClosed) break;
-                    // condiction to get the locker
+                    // fight to get the locker
                     else pool->cond.wait(locker);
                 }
             }).detach();
